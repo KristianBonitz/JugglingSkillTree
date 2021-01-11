@@ -1,6 +1,7 @@
 <h1>Juggling Skill Tree</h1>
-<ol>
-  <li *ngFor="let user of users">
-    {{user.userName}}
-  </li>
-</ol>
+<ul>
+  <li><a routerLink="userlist">Home</a></li>
+  <li><a routerLink="register">Register</a></li>
+  <li><a routerLink="login">Login</a></li>
+</ul>
+<router-outlet></router-outlet>

@@ -1,0 +1,14 @@
+{{diagnostic()}}
+
+<div class="form-group">
+  <form #register="ngForm">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username-field" required
+    [(ngModel)]="model.username" name="username">
+
+    <label for="password">Password (optional)</label>
+    <input type="password" class="form-control" id="password-field" [(ngModel)]="model.password" name="password">
+
+    <button type="button" class="btn btn-default" (click)="newUser()">New User</button>
+  </form>
+</div>

@@ -6,22 +6,6 @@ import { HttpClient } from '@angular/common/http'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Juggling Skill Tree';
-  users: any;
-
-  constructor(private http: HttpClient){}
-
-  ngOnInit(): void{
-    this.getUsers()
-  }
-
-  getUsers(){
-    this.http.get("https://localhost:5001/api/Users").subscribe(
-      response => {
-      this.users = response;
-    }, error => {
-      console.log(error);
-    })
-  }
 }
