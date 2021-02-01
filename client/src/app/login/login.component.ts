@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { User } from '../user';
+import { AuthService } from '../auth.service';
+
 
 
 @Component({
@@ -11,7 +13,7 @@ import { User } from '../user';
 
 export class LoginComponent{
 
-	constructor(private http: HttpClient){}
+	constructor(private http: HttpClient, private authService : AuthService){}
 
 	model = new User('username');
 
@@ -23,13 +25,13 @@ export class LoginComponent{
 		// submit login post request
 		this.http.post("https://localhost:5001/api/Account/login", this.model).subscribe(
   		response => {
-  			console.log(response)
+  			console.log(response.authToken)
+  			this.authService.setKey(response.authToken);
+  			console.log(this.authService.getKey())
   		}, error => {
   			console.log(error)
   		})
-		// capture the authtoken
-		// send it to root, 
-		// so that all future request send it as a header
+		// forward page to user details
 		this.model = new User('username')
 	}
 
