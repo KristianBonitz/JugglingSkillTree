@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { User } from '../user';
-import { AuthService } from '../auth.service';
-
 
 @Component({
   selector: 'app-register',

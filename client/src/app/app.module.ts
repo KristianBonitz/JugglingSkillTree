@@ -8,15 +8,13 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { RegisterComponent } from './register/register.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserlistComponent,
-    RegisterComponent,
-    UserDetailsComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

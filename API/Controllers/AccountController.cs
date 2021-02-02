@@ -42,7 +42,6 @@ namespace API.Controllers
             await this.context.SaveChangesAsync();
             return new UserDTO
             {
-                UserId = user.Id,
                 Username = user.UserName,
                 AuthToken = this.tokenService.CreateToken(user)
             };
@@ -71,7 +70,6 @@ namespace API.Controllers
 
             return new UserDTO
             {
-                UserId = user.Id,
                 Username = user.UserName,
                 AuthToken = this.tokenService.CreateToken(user)
             };
